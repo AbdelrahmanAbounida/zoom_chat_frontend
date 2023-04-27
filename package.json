@@ -1,0 +1,41 @@
+{
+  "name": "main",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@dqbd/tiktoken": "^1.0.4",
+    "@headlessui/tailwindcss": "^0.1.2",
+    "@tabler/icons-react": "^2.14.0",
+    "@tailwindcss/forms": "^0.5.3",
+    "@vercel/analytics": "^0.1.11",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.3.6",
+    "eventsource-parser": "^1.0.0",
+    "firebase": "^9.20.0",
+    "langchain": "^0.0.59",
+    "load-text-file": "^2.0.0",
+    "next": "13.3.0",
+    "next-auth": "^4.22.0",
+    "next-connect": "^0.13.0",
+    "next-i18next": "^13.2.2",
+    "next-transpile-modules": "^10.0.0",
+    "postcss": "8.4.21",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.8.0",
+    "react-markdown": "^8.0.6",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-mathjax": "^4.0.2",
+    "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1",
+    "tailwindcss": "3.3.1"
+  }
+}

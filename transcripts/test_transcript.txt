@@ -1,0 +1,335 @@
+Speaker 2 | 02:45
+Not
+
+Speaker 1 | 02:49
+hey, Michael, how are you? That's too bad, that's too bad, but of a busy morning, but, uh, but, uh, can't complain about you. Oh God, tell your daughter hello. Nice. You just have the one so far so far worse. Yeah, yeah, that's you, uh, eight and six. So I end up I do drop off on Fridays and then try to do that into the office here. So it so it's a little bit chaotic, but actually same thing is actually pretty good. They were all cooperative today. That doesn't always happen, but it was actually pretty smooth, so, uh, yeah, not and are you where are you based? Oh, okay, um, all right, that's good. Um, I like being on the same time zone as as as the people I'm working with, so that's good. Um, so, yeah, so you've worked with have you worked with Chad before? The live c eigh team or. I guess he's filled you in on sort of the situation or. Or whatever.
+
+You | 02:50
+Doing well, how about you?
+Same Haughter woke up in a happy mood. She enjoyed the stroller ride to daycarely all you can ask her in the morning.
+She's two so far, but you like, the best ways to start off today is when your kids are, like, happy, they know what they need to do and they do it.
+San Francis.
+Yeah, 's parts of it.
+So I haven't worked with Chad directly before. I just known through, like, the the Twitter sphere, um, automation space.
+It's kind of a big fan of one of his podcasts, so I've reached out to him and communicate him a few times. Um, and his team sent me a video of your automation, so I've kind of broken it down into, uh, on a mirror board here to try to guess.
+This stuff at the top isn't really relevant right now. It's more this one
+
+Speaker 1 | 05:02
+Okay,
+
+You | 05:04
+just to try and gain an overall understanding of what we're actually doing within it so that if we do decide to go forward. And, like, I'm maintaining this.
+I have a decent understanding of what's going on, and I shouldn't. I'm hoping I don't need too much, um, saying on.
+Once my wife just left the room and put on sound heny all on. See something about that, um, just so I have an understanding of what's going on.
+And then the transition phase between Ifca and daily automations shouldn't be too much just because like, their team built out a a really good automation and they use a lot of best practices. So it's it's fairly easy for me to understand what's going on.
+Where there are going to be some holes is like the nuances of zero, for example.
+I've only worked with Quickbooks online before, but from what Chad has told, maybe zero is much easier to work with. So, you know, there's there's going to be some a little bit of a learning curve with zero, just like, um.
+I think in the video their team suggested, like, with invoices, if one is partially paid, you can't go in and edit it through the a P I.
+And so like things like that, there's going to be some things where I have to learn, um, that there are nuances
+
+Speaker 1 | 06:39
+yeah. Um, so first of all, I'm going to suggest maybe we stop calling it Gravity, because Gravity is actually the name of the developer who developed our internal portal. And so no one here called at that. And so whenever, um, it's referred to it, it was referred to by life state, people were like, what are you talking about? So we if we. Yeah, let's call it portal, people people would call it the portal. So it verses from portal to zero. Um, maybe we'll just start there. That way there's no confusion moving forward. Um, so the the the I guess,
+
+Speaker 2 | 07:25
+um,
+
+Speaker 1 | 07:28
+I I I'm not sure where to say. So essentially, I think, um, you know, it was we we build an invoice in our portal and as soon as we hit save and bill, then it should become revenue in zero. That's the ultimate goal under the proper clients. And what ended up happening a little bit, and Marin has been working on it. I don't know if you talked to Maran directly. He was the the guy at Live Sea who was working on it. It's tricky because, um, so we we do we serve condo buildings, right? Um, and a condo building will have a a property manager, um, a, you know, a corporate Id, you know, as a Strata, what we call Vancouver Strata Council, which is like the corporation. And then there's also individual unit owners. And so it's not sometimes it's not clear who the client is when you say who's your client? It could be sometimes we build the property manager most of the time we're building the property manager directly, but then within that property manager, we. We have a property manager company, for example, Rancho. Um, you know, they manage probably one hundred buildings that we are Inch. So if you look at the way that we're kind of naming our clients, it's Rancho Management Dash. And then the building. And so for any, you know, piece of equipment that building related to like the main, you know, water boiler or, you know, the common types that are running from the ground all the way up to the top floor or whatever. You know, we would the client would be, you know, Rancho Management Dap for that building, and we would build Rancho and they would pay us. But then every so often, not every so often, you know, a lot of the times, we also do service calls within units themselves. So if someone has a plug sink or a toilet, that's the unit owner, and so they live in that building. Um, and but then they should get built directly. And where this comes into play is when I look at, like, say, my accounts receivable. I'm like, well, how much does this building owe us? Um, I don't want to get that mixed up with. How much do the individual unit owners owe us as well who live in that? So it's made inside the portal. So I look at an invoice and you'll see we have. I can't remember what it's called now, and maybe we should. That's where it needs clarification. But there's kind of two boxes. There's a bill too, and then there's a job site. And if the job site is the job site will be a building, but then it might get built to either Rancho or the unit owner. And so that's sort of where when we first initially rolled this out, there was some confusion there because I would pull up a statement in zero for, you know, building Abc, but then mixed in, there would be bills that should have that would have gone directly to the unit owner. So it's all there, it's all it's all it's all there in in our portal, and Marin's been working on mapping it properly, and so that's sort of. I don't it's probably worth getting on a call with him to come to figure out where all that sits right now because you've been working on fixing that and and all those sorts of things over the last couple of weeks. But it's probably good for us to circle up with him just to get that solidified and figure out where that is. It's really just mapping. It's's just. Yeah, mapping it to the right, to the right and and client, the right, you know, person who should be getting the bill and should be making the payment, and it's. To be honest, I think it's mostly cleaned up, but they're still like you say, like we do, you know, almost eight thousand invoices a year. And so there's nuances that are represent maybe one percent or something like that, but that's still eighty invoices, right? That still ends up being a lot just by volume. And so that's sort of where we are right now is cleaning that stuff up and making sure, um, it's mapping correctly. The other piece, too that he's working on, that I think is also probably ninety five or ninety six or seven percent fixed is the the pulling itself where you've got here pulling the data. Um, like, I should be able to go into the portal and I can export, you know what we've invoiced from the portal as a C S V file. Um, and that number should match exactly what's in zero. Right? Um, but it it doesn't. And he's been doing work as on that as well over the last couple of weeks. So, um, I think it's critical to circle up with him and just get a sense for where that is because that's the other piece that we're going to need to do. I guess we've learned through this kind of transition process is every week we're going to want to match that up and make sure you know zero like enough. I f. I as soon as I hit an invoice, bill it, that should flow to zero, you know, within a couple of minutes. And if those numbers disagree, um, you know, obviously have to reconcile that.
+
+You | 10:00
+side of zero.
+So there's still some confusion on, um.
+I guess how would say that?
+Okay, Yes, there's.
+There are many situations where you hit save and bill or bill and save. Um,
+
+Speaker 1 | 13:20
+Oh, no. And I think that that part should actually as as as far as I understand. Delete out of the invoice or revise an invoice in our portal. That information should flow into zero and that should match up zero. It's when a payment has been applied to the invoice in zero that then some manual work has to be done to, I guess, um, revise the invoice in in zero manually. But any revisions that we make in the quarter before a payment has been applied, as far as I understand, it should should just fall over including cancelations of invoices because will canceling invoice every so often as well. Yeah,
+
+You | 13:20
+and then, oh, gotcha.
+Yeah. So what it sounds like is most likely there's, ah, some type of trigger within the system that whenever a voice gets updated, deleted, created, it sends a sends a notification of the automation about it, which is good.
+
+Speaker 1 | 14:18
+mm hm hm hm.
+
+You | 14:21
+And then I think he said there's a process within the automation that if like an invoice has been partially paid, there's some notification that goes to you guys
+
+Speaker 1 | 14:34
+No, I don't know, like that, like we're still honestly, we're not even really relying on that, the automation part yet. Um, so we haven't tested that part y
+
+You | 14:47
+that's not correct. So there's still some work to be done, um, and within.
+So for my experience with with automations, we can get the automation to cover eighty percent of your use cases fairly quickly. And then that last twenty percent, which I think you're experiencing right now is all those fringe cases,
+
+Speaker 1 | 15:10
+exactly. Yeah, yeah, exactly,
+
+You | 15:10
+which is where all the details are. So if we can get it to cover, you know, seven thousand nine hundred and ten invoices for you.
+That's way better than doing eight thousand invoices by hand.
+
+Speaker 1 | 15:26
+exactly, and we should we should be there. I think we're there right now, and this is why I think it's kind of good to to maybe circle up all all three of us with Mar and just to see that. Yeah, that last ten percent. Where are beyond that and and what's still outstanding? Um, I mean, there are a couple of other sort of things that we've noticed. There are some invoices that for some reason didn't get get sent over to to zero for whatever reason. So we'll look for it in zero and it won't be there. He's again, I think he's actually just a lot of work on that. And that's again, you know, that part is going to be eighty percent fixed as well. So just a lot of loose loose ends here, um, that need to be that need to be fixed and and finalized. Um, and. And then, you know, once we get it going, um, obviously, you know, maintaining it and making sure that if something goes wrong, we can we can get it fixed.
+
+You | 15:26
+Um, yes, yeah.
+Um, yeah, for that, the invoices in terms of troubleshooting for things like invoices aren't showing up. But I'll typically do is just do like, a as soon as something comes across, um, the kind of like our our log almost.
+So we can easily see, like, Hey, you didn't make it in.
+
+Speaker 1 | 16:44
+Yeah, okay, okay.
+
+You | 16:46
+We can go search for it in the spreadsheet and then access the make log.
+Then we can troubleshoot a little bit easier that w we're not digging through, you know, tons of data trying to find it.
+Um, and I they may have done something so much that already.
+
+Speaker 2 | 17:09
+Yeah,
+
+You | 17:09
+Um.
+Yeah. So let's see, um, outside of this automation, is there anything else you guys are looking to get done or do you want to focus on this one first and then kind of expand out from there?
+
+Speaker 1 | 17:26
+I definitely want to focus on this one first, making sure that this is is right and running smoothly. There is another piece that I'd like to do around inventory. So we also pay a lot of invoices. So, you know, we'll go to, um, you know, eight thousand jobs is. Or eight thousand invoices is eight thousand jobs that we go to. And, you know, we'll go to a wholesaler, um, and, you know, pick up a part. You'll have a job number on it and we receive that, that invoice, that invoice will go to, we send it to Dext. This is where twenty eighty managers are. A P process. So they'll take that, they'll put it in a sheet and upload it to zero with the job number, um, a job Id. So, um, and then, you know, we, um, then they code it to whatever expense it is. Um, and then. And then off we go. But the problem with that is, um, we should actually when we when we get the equipment in our hands, that should actually be inventory and not expensed. It should be inventory until we finish the job. And the zero should know when we finish the job because that's when that invoice comes in, right? When the invoice comes in from the portal, it'll have an invoice number and it'll have that job ide. Um, and so I'm hoping there's a way to automate that so that we put all of our parts into inventory. And then when we bill it and Zero sees, um, the job Id come in through the billing, then we take that out of inventory, take that specific invoices out of inventory and put it into whatever it should be expensed to, um, because we're having such a hard time matching our revenues with our with our expenses that they should be at the same time. But they're getting spread apart. And so you know, we're we're expensing something in September but not not recognizing the revenue until November. So then it's like, well, why did September look so terrible? Ah. When really it was just a mismatch of when we should have been expensing it, if that makes sense to you, um,
+
+You | 19:56
+Yeah, yeah, yeah. So, like, for example, um, I'm trying to to visualize this.
+So in your example of September, really, because you're expensing equipment which you still have in hand, um, so it should be an asset.
+
+Speaker 1 | 20:12
+but correct, yeah, until we bill it, and so we bill it out. That's right. Yeah, and so that. Yeah. And so I don't know, I mean, I think all the data is there because every invoice has a job number that like every supplier invoice, everything we buy comes with an invoice has a job number on it. And then when we push our invoice Ab that has a job number on it as well. I believe both of those invoice number job numbers are in zero. And so it's a matter of figuring out. Okay. Zero sees it come in as one of our invoices as revenue. Now it's time to move that from inventory to expenses,
+
+You | 20:16
+Okay, but it's been recorded as a negative.
+Okay,
+
+Speaker 2 | 20:59
+so,
+
+You | 21:01
+okay, so the the job number from your wholesaler is one they assigned, so that's going to be different than the job number.
+
+Speaker 1 | 21:09
+no, nope, that's the same as our job number. So we give them a job number. Yeah, exactly, exactly.
+
+You | 21:12
+Oh, even better. Oh, nice.
+Okay, so this this is literally like, we know we have a job coming up with a building. We're going to go buy the equipment for it.
+So we know those job numbers match up. And this isn't like pre buying a ton of equipment
+
+Speaker 1 | 21:38
+We b buy it specifically for that job. And what happens is, you know, the technician will go out by the piece of equipment, but then get called away on an emergency and doesn't get to that job. Meanwhile, that equipment sitting in his back in his trunk or whatever in the in the van, and he doesn't get back to that job for another two weeks or something like that. And so it looks like we've expensed it, but we didn't actually get to that job until later on. So anyways, that's kind of the next my next dream to do that, but really it's getting at least for right now, just that revenue side to because that's key right now. We're we we look at our revenue in zero and we can't rely on it, which makes no sense, right? So we're always kind of look, we need to be able to rely on on whatever the revenue is in in zero that it matches what's coming out of our portal.
+
+You | 21:59
+up, okay?
+Yeah, absolutely. Um, see, working on a project right now where, like, I'm trying to.
+Well, point being, when there is a Mitchmat Miss mismatch like we should and theory be able to pull a report weekly from a portal that and through an automation. And then compared to the data that's in zero.
+
+Speaker 1 | 23:02
+I would think so. Yep, I think so. Yeah.
+
+You | 23:03
+And if those don't match, it triggers something to you that says, Hey, this doesn't match. Please investigate. And then if we can get granular enough, we might be able to say we think it's these invoices here that aren't matching up, but
+
+Speaker 2 | 23:20
+Yeah,
+
+Speaker 1 | 23:21
+and I think if you if we're doing that weekly, that shouldn't be a huge problem, you know, call it one hundred and fifty invoices a week, so it's not like I. And you know, one hundred forty five of them should flow through or more should flow through. So it's just that once we get on that weekly cadence, it's should be good. I think right now, though, because we're trying to basically we switched over to zero in August. And so that's the kind of the tricky part is it's just there was so much that I know Marin has been working on it and I. And that number is shrinking and that gap is shrinking. But as he works through them all, there's various reasons why they're not flowing through it. So hopefully, yeah, by the time we get to that weekly level, it's not a lot of work.
+
+You | 23:36
+sure,
+
+Speaker 2 | 24:12
+E
+
+You | 24:19
+yeah,
+
+Speaker 1 | 24:29
+Oh, I take it. I'm sorry, I kind of I think you're you're a bit choppy. I don't I'm hearing bits and pieces. I don't I don't know if you were talking there. Well,
+
+You | 24:29
+let's go.
+Oh, that's probably my keyboard in a loud taper.
+Um, let's see.
+Okay. So next steps would probably be to get together with Marin to figure out what needs to be done.
+If I can assist with that or if, um. Sometimes it's just easier for the current developer to finish it, finish it out,
+
+Speaker 1 | 25:07
+h
+
+You | 25:07
+and then I take over after that, um, do you have any questions on how I work? But my process is
+
+Speaker 1 | 25:20
+uh, I mean, if yeah, any background that you've got that you can provide would be would be great. Um, and then I think, yeah, um, in terms of next steps, um, you know, you're like, we had, um, a a rate, um, for live ca to, um, ah, for ongoing support and maintenance. So, you know, um, your your proposal or budget for that, um. And then, yeah, just just going from there. But, yeah, any anything you can provide on. Yeah. Your background and your process would be great.
+
+You | 25:31
+okay?
+Yeah, absolutely. So my background, I've I've been a small business owner since Two Thousand and Thirteen have owned four small businesses throughout that process, and, um, my kind of specialty within each of those businesses was the operation side, and then I got into automations, um, when I was very frustrated with my restaurant business and wanting to get out of it.
+So I've been doing automations for the last three years. I went full time last year, and since then, I've been working with an agency and doing stuff with my own clients.
+So I've. Specifically in make for the last three years full time and make for the last year.
+And in that process, I've seen I think the agency has like fifty clients. So I've built probably five hundred automations by myself or, you know, with some help with the team and then helped manage and optimize another five hundred six hundred.
+So there's a lot I've seen. So I I know of a lot of tips and tricks within the automations themselves, but you know, there's hundreds of thousands of Apis out there.
+So I haven't seen everything. So I will say within any process, there is going to be a learning curver.
+Any developer is going to have a bit of a learning curve taking over an automation. So I. Do you like to set that expectation with clients ahead of time?
+Like, I'm not going to come into any projects and just be like, Okay, yeah, it's done. You know, that's just not realistic for me anyway.
+
+Speaker 2 | 27:39
+Yeah,
+
+You | 27:43
+Um. And then in terms of how I work, I normally I'm moving to a process where I'm time blocking for clients.
+So it's it's usually not something where I work on this project for like twenty hours straight. It would be more along the lines of we do five hours one week, five hours the next, and then you have specific time frames that I'm working on your project, and it's still early in that process, so I'm still gathering client feedback on whether or not they enjoy that.
+
+Speaker 1 | 28:22
+mhm
+
+You | 28:22
+But from what I've, the early feedback is, um, like, it's nice they know when I'm going to be working on it. I get it to the point where they can kind of test whatever I just did and you can clearly see what progress I'm making that way, you know, I don't come back in a month with what you've thought I was going to be building, and it's totally different.
+
+Speaker 1 | 28:47
+mhm mhm mhm
+
+You | 28:47
+So you know, I try and keep you involved in the iteration process of building out these automations.
+And then in terms of budget, it's right now my outwardly rate or I'm with that time blocking process, I'm trying to do two thousand a month for twenty hours and that gets five hours a week.
+And then if we decide you need more, you know, the rate goes down is more or less. It's like, if I have to market myself more, they're like, the less time you take up, the more I have to market myself to, you know, to meet my needs,
+
+Speaker 1 | 29:28
+wrong, wrong, right, right, sure, sure. Um,
+
+You | 29:31
+so. So if, ah, you know, you're booking more time.
+I am much more appreciative of that, because marketing is not the thing I enjoy.
+Um, yeah, in the e.
+
+Speaker 2 | 29:45
+and
+
+You | 29:47
+Sorry. Um, good.
+
+Speaker 1 | 29:48
+how does yeah, how does me how do you fit into met um dot com? I don't I'm not familiar too familiar with how it's like that ecosystem ah, only by Namame not.
+
+You | 29:58
+Oh, gosh, it so make, uh, are you familiar with Zapier P You're they're often compared what they essentially are is the middleman between two platforms.
+So if you have your portal, for example, it's exporting data or sending data and you need to put it somewhere else. Unless there's a native integration, there's.
+It's very difficult to get the data from your portal to zero.
+So make and zap here, make it much easier to be able to do that, where you can do data transformations, you can do conditionals, um, and essentially make the that process where you normally need an actual programmer that would take months and, you know, tens of thousands of dollars. You can do it in hours or weeks sometimes.
+
+Speaker 1 | 30:54
+I see. Okay,
+
+You | 30:56
+Yeah. And then within the Make ecosystem, I'm a partner with Make, so I've been through their partner training, I've gotten their certifications and, um, just very familiar with the platform itself.
+
+Speaker 1 | 31:15
+well, right, okay, um, and I tell your, what's your roster like right now? How many clients do you have? How many, I guess, clients would you like? Like, I'm just trying to think of. I mean, there's two kind of stages to this. One is is finishing sort of where this is, and then the next is kind of the Ulan support. And to be honest, I'm hoping to not need a lot of on born support. Um, so I guess I'm not sure, you know what? I I think it's hard because with the time blocking, like, I don't know that I'll meet a specific time every week. Um, it's more like wh when problems come up or something like that. Right? And so I guess maybe what is your what does your, I guess current portfolio look like? What do you you mention, you know, five hours a week? Like, what's your, I guess, maybe minimum that you would do for a client or or something like that? Because in in theory, this should just run and I won't meet you after. After a while. Unless we're doing a new project or something like that. And hopefully run smoothly, right?
+
+You | 31:57
+M yeah, so that's a great question.
+The typically with automations like there's been several that I've built that have been running for a year and a half with no problems. Was something like this where there's a lot of dynamic information, Um, it could in theory, run fairly well,
+
+Speaker 2 | 32:38
+Yeah,
+
+You | 32:48
+but there's always theory and then and practice. Um, so the ongoing support that I I kind of see that might be needed is it's like some of the category change within zero or if, like, you know, some of the mapped fields, a change names or something like that.
+Um, some of the best practices we could do is like setting up error handlers.
+So if we do get an Api error with zero because I think there's a limit. I think you said that in the video, like, we can just make it retry again automatically without.
+So in terms of like, there's there's two stages. You're right. The the building it out and then the ongoing support for the ongoing support portion of it.
+Um, what I'm trying to do is essentially limit myself to five clients. Five full time clients. What I'm calling full time, which would take up about one hundred hours a month and then use that other time to be able to service clients who I've worked with before.
+
+Speaker 2 | 33:49
+okay,
+
+You | 33:58
+And then that would probably look like you purchase a set amount of hours that expire in ninety days. So under my current structure, it's five hours expires in ninety days, and, you know, it's just available when you need it.
+
+Speaker 1 | 34:08
+mhm, bro, at, um, okay, and this information that you got here that you put together here, that's from that's all out of the video that, uh, that Chads had sent to you. Got it. Okay, that's good to know. Okay, I mean, no, that's, ah, that's, ah, it's good to know. Um, and, um, uh, like you say, like, it's,
+
+You | 34:21
+Rut.
+
+Speaker 2 | 34:45
+um,
+
+Speaker 1 | 34:47
+it's always hard to, uh, I guess finish someone else's stop. Um, but at the same time, thinking about the ongoing work, it's a good way to get into it and understand, I guess, you know, how how it works. So to make that that forward looking part easier, I guess, 'cause you've you've been in at least some of it or whatever, but, um, maybe that's a conversation with that I would chat. Okay, um, well, how about this? What I'll do is I'll circle back up with Larca, um, and we either chat or Marin, um, and checked on their availability, and then and then go from there. I'll reach back out to you, and and, uh, and we can go from there.
+
+You | 35:31
+Sounds good. Um, and if you don't mind me asking, like, what does what does live c a charge for a project like this
+
+Speaker 1 | 35:44
+Ah, yeah, I.
+So I think it was a few thousand dollars, uh, for the initial set up, and then it was a couple hundred dollars a month after that. And I think that was because, you know, presumably there's not a whole lot of support needed.
+
+You | 36:16
+firs
+
+Speaker 2 | 36:19
+Um,
+
+Speaker 1 | 36:40
+a couple of thousand dollars, and then the recurring was a couple hundred dollars a month. Two hundred dollars a month. Yeah. Yeah, so it was, uh, yeah, support bug fixes, minor updates to maintain, and then the cost of tools required to maintain and any data storage or anything like that,
+
+You | 36:46
+and and that that was just for, like, if it breaks, we'll go in and fix it.
+O and so, yeah, I think that's in line with what I've experienced with the agency I work with. And then, you know, seeing what they actually built out, I think that's probably accurate.
+
+Speaker 1 | 37:30
+right?
+
+You | 37:33
+Um, now, in terms of my rate, is that something you're hesitant about?
+And I'm asking this more on a, uh, like, feedback level than a a like, a sales level?
+
+Speaker 1 | 37:46
+Mhm hm. Yeah, um, I I mean, I always. Right, and that's always, uh, uh, the when we think about, um, a. I guess mostly it's, um. I think that time blocking can be a challenge because if we need something generally, we need it quickly, like. So for example, we need to. I mean, we've been working on this automation for probably four or five months now, and everybody's getting impatient to see it up and running and everything like that. And, um. And if it stops working or something happens to it, we generally would want to, you know, fix you quickly. Um. And if it happens to follow the wrong day or something like that and we're needing to, you know, wait or whatever to for our time block, then that becomes. That becomes a challenge, right? And so, um, that's the only that's kind of where where my mind is is going. It's it's it's I guess it's one always about the ratepresent, also about the, I guess timing and and scheduling and things like that.
+
+You | 37:55
+Yeah.
+Okay, uh, so I can address that second part. I should have done this earlier.
+So in emergencies, like, if something fails, um, I am available to fix that. Like the
+
+Speaker 1 | 39:09
+Okay, okay. Oh, I see, ah, I got it. Okay, okay, sure, sure, okay, okay, okay, no, that's fair, that's fair. Um, okay, um, well, no, I think this is great. Um, I think, uh, no, I certainly appreciate your time here. Um, I think. Yeah, if if you want to put something down, um, like your your rates and. And I guess the other thing is to expectation like you say, I understand to have a good number of hours committed per month and things. So, you know, maybe sort of where you're thinking, ah, or your your thoughts are in terms of that ongoing loathly services, um, throw that in an email and then we can go from there.
+
+You | 39:10
+the the time blocking is more for like building out new automations, making improvements to them for things that aren't currently broken.
+It's just a, you know, to help me with not trying to jump from task to task like I normally did. So emergencies are different situations where, you know, I do want to be available for clients for that.
+This ongoing services estimation based on like the automations, this one empt and then this one diventory automation,
+
+Speaker 1 | 40:34
+Yeah, yeah, and, yeah, I yeah, maybe they're. Maybe there are three separate things. One is, you know, let's assume that we we conclude that, ah, you know, you we need you to pick up the these loose ends and things like that on the integration. So that's one one scope, second scope is ongoing service, and then the third scope would be something like that indictory automation
+
+You | 41:07
+I can do that.
+
+Speaker 2 | 41:10
+and,
+
+You | 41:13
+Okay. Ah, do you want a copy of of this?
+
+Speaker 1 | 41:20
+yeah, no, that's all that's that's, uh, uh, that's a good summary for sure,
+
+You | 41:28
+I'll send it over now, so don't look at how our unword as my emails are
+
+Speaker 1 | 41:38
+the s same way. Um, cool. All right, Michael will appreciate the time, and, uh, yeah, it's, uh, we we'll be in touch. Awesome. Thanks. He, too.
+
+You | 41:47
+back. Thank you, Judy. Enjoy the rester day in your weekend.
+All take.
+
