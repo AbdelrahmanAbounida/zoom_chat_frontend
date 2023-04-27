@@ -18,7 +18,6 @@
     "axios": "^1.3.6",
     "eventsource-parser": "^1.0.0",
     "firebase": "^9.20.0",
-    "langchain": "^0.0.59",
     "load-text-file": "^2.0.0",
     "next": "13.3.0",
     "next-auth": "^4.22.0",
