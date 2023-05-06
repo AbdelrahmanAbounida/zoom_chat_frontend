@@ -6,7 +6,7 @@ import {
   IconTrash,
   IconX,
 } from '@tabler/icons-react';
-import { FC, KeyboardEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ConversationComponent } from '../Chatbar/Conversation';
 
 export const ChatFolder= ({
@@ -15,7 +15,6 @@ export const ChatFolder= ({
   currentFolder,
   onDeleteFolder,
   onUpdateFolder,
-  // conversation props
   selectedConversation,
   loading,
   onSelectConversation,

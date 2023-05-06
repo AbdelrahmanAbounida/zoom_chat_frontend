@@ -207,7 +207,6 @@ export const ChatInput = ({
             onCompositionStart={() => setIsTyping(true)}
             onCompositionEnd={() => setIsTyping(false)}
             onChange={handleChange}
-            // onKeyDown={handleKeyDown}
           />
 
           <button

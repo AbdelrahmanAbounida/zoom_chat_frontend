@@ -21,6 +21,8 @@ import {
     systemPrompt,
     key,
     messages,
+    clientId,
+    transcriptId
   ) => {
     // update model
     model.id = "text-davinci-003"
@@ -28,23 +30,27 @@ import {
 
     let QA_PROMPT;
     let source_time;
-    let transcript_id;
 
     const question = messages[messages.length-1];
 
-    const formData = new FormData();
-    formData.append('question', question['content']);
+    const payload =  {
+      "question": question['content'],
+      "clientId": clientId,
+      "transcript_ids":transcriptId
+      }
 
-    await fetch(`https://zoom-chat-test.onrender.com`, {
-                                        method: 'POST',
-                                        body: formData,
-                                    }) 
+    await fetch(`https://zoom-pinecone-backend.onrender.com/qa`, {
+                                  headers: {
+                                    "Content-Type": "application/json",
+                                  },
+                                  method: 'POST',
+                                  body: JSON.stringify(payload),
+                                  }) 
                           .then(response => response.json())
                           .then(data => {
-                            const speaker = data["context"]["speaker_name"]
-                            const context = data["context"]["text"]
-                            source_time = data["context"]["time"]
-                            transcript_id = data["context"]["transcript_id"]
+                            const speaker = data["result"]["speaker"]
+                            const context = data["result"]["context"]
+                            source_time = data["result"]["source_time"]
 
                             QA_PROMPT = `You are a Q&A AI assistant. Use the following pieces of context got from zoom meeting transcript
                                           and reply to the following  question according to the given context
@@ -60,6 +66,8 @@ import {
 
                           })
 
+    console.log("*********************************")                      
+
     const res = await fetch(`${OPENAI_API_HOST}/v1/completions`, {
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +81,7 @@ import {
         model: model.id,
         prompt: QA_PROMPT, 
         max_tokens: 3000,
-        temperature: 0,
+        temperature: 0.1,
         stream: true,
       }),
     });
@@ -127,7 +135,6 @@ import {
         const parser = createParser(onParse);
   
         for await (const chunk of res.body ) {
-          console.log(decoder.decode(chunk))
           parser.feed(decoder.decode(chunk));
         }
       },

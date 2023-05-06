@@ -1,9 +1,9 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
-    let description = "ask The universe";
-    let sitename = "AskTheUniverse";
-    let title = "Spirtual Chat Bot";
+    let description = "Zoom Chat App";
+    let sitename = "ChatWithZoom";
+    let title = "Zoom Chat Bot";
   return (
     <Html lang="en">
       <Head>

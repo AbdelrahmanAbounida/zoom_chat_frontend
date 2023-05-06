@@ -11,7 +11,7 @@ export const config = {
 
 const handler = async (req) => {
   try {
-    const { model, messages, key, prompt } = (await req.json());
+    const { model, messages, key, prompt,clientId,transcriptId } = (await req.json());
 
     await init((imports) => WebAssembly.instantiate(wasm, imports));
     const encoding = new Tiktoken(
@@ -43,7 +43,7 @@ const handler = async (req) => {
 
     encoding.free();
 
-    const stream = await ZoomOpenAIStream(model, promptToSend, key, messagesToSend);
+    const stream = await ZoomOpenAIStream(model, promptToSend, key, messagesToSend,clientId,transcriptId);
 
     return new Response(stream);
   }

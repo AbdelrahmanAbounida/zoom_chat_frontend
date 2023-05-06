@@ -35,3 +35,5 @@
   process.env.OPENAI_API_HOST || 'https://api.openai.com';
   
   
+  export const DEFAULT_TRANSCRIPT_ID = process.env.NEXT_PUBLIC_TRANSCRIPT_ID || `1T1g8KNFkxzxhDgsxUjlYl2ow2YQoUc82`
+  export const DEFAULT_CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID || `12345`

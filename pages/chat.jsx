@@ -2,10 +2,11 @@ import { Chat } from '@/components/chat/Chat/Chat';
 import { Chatbar } from '@/components/chat/Chatbar/Chatbar';
 import { Navbar } from '@/components/chat/Mobile/Navbar';
 import {
-  OpenAIModelID,
   OpenAIModels,
   fallbackModelID,
-  DEFAULT_SYSTEM_PROMPT
+  DEFAULT_SYSTEM_PROMPT,
+  DEFAULT_CLIENT_ID,
+  DEFAULT_TRANSCRIPT_ID
 } from '@/chat_utils/const/openai';
 import { getEndpoint } from '@/chat_utils/app/api';
 import {
@@ -28,7 +29,7 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/router';
-import Header from '@/components/home/Header';
+
 
 const Home= ({
   serverSideApiKeyIsSet,
@@ -47,7 +48,6 @@ const Home= ({
   const [messageIsStreaming, setMessageIsStreaming] = useState(false);
 
   const [modelError, setModelError] = useState(null);
-  const [models, setModels] = useState([]);
   const [folders, setFolders] = useState([]);
 
   const [conversations, setConversations] = useState([]);
@@ -57,7 +57,7 @@ const Home= ({
   const [showSidebar, setShowSidebar] = useState(true);
 
   const [prompts, setPrompts] = useState([]);
-  const [showPromptbar, setShowPromptbar] = useState(true);
+
 
   // REFS ----------------------------------------------
 
@@ -100,13 +100,14 @@ const Home= ({
         messages: updatedConversation.messages,
         key: apiKey,
         prompt: updatedConversation.prompt,
+        clientId: updatedConversation.clientId,
+        transcriptId: updatedConversation.transcriptId,
       };
 
       const endpoint = getEndpoint(plugin);
       let body;
 
       body = JSON.stringify(chatBody);
-
       const controller = new AbortController();
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -387,6 +388,8 @@ const Home= ({
       },
       prompt: DEFAULT_SYSTEM_PROMPT,
       folderId: null,
+      clientId: null,
+      transcriptId: null,
     };
 
     const updatedConversations = [...conversations, newConversation];
@@ -420,6 +423,8 @@ const Home= ({
         model: OpenAIModels[defaultModelId],
         prompt: DEFAULT_SYSTEM_PROMPT,
         folderId: null,
+        clientId: null,
+        transcriptId: null,
       });
       localStorage.removeItem('selectedConversation');
     }
@@ -454,6 +459,8 @@ const Home= ({
       model: OpenAIModels[defaultModelId],
       prompt: DEFAULT_SYSTEM_PROMPT,
       folderId: null,
+      clientId: null,
+      transcriptId: null
     });
     localStorage.removeItem('selectedConversation');
 
@@ -529,12 +536,6 @@ const Home= ({
     if (showChatbar) {
       setShowSidebar(showChatbar === 'true');
     }
-
-    const showPromptbar = localStorage.getItem('showPromptbar');
-    if (showPromptbar) {
-      setShowPromptbar(showPromptbar === 'true');
-    }
-
     const folders = localStorage.getItem('folders');
     if (folders) {
       setFolders(JSON.parse(folders));
@@ -571,10 +572,11 @@ const Home= ({
         model: OpenAIModels[defaultModelId],
         prompt: DEFAULT_SYSTEM_PROMPT,
         folderId: null,
+        clientId:null,
+        transcriptId: null
       });
     }
   }, [serverSideApiKeyIsSet]);
-
  
   // Handling Rerouting
   const {currentUser} = useAuth()

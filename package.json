@@ -11,6 +11,7 @@
   "dependencies": {
     "@dqbd/tiktoken": "^1.0.4",
     "@headlessui/tailwindcss": "^0.1.2",
+    "@pinecone-database/pinecone": "^0.0.14",
     "@tabler/icons-react": "^2.14.0",
     "@tailwindcss/forms": "^0.5.3",
     "@vercel/analytics": "^0.1.11",

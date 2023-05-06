@@ -3,7 +3,6 @@ import { IconArrowDown, IconClearAll, IconSettings } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import {
   memo,
-  useCallback,
   useEffect,
   useRef,
   useState,
@@ -12,7 +11,12 @@ import { Spinner } from '../Global/Spinner';
 import { ChatInput } from './ChatInput';
 import { ChatLoader } from './ChatLoader';
 import { ChatMessage } from './ChatMessage';
-import { ErrorMessageDiv } from './ErrorMessageDiv';
+
+import {
+  DEFAULT_CLIENT_ID,
+  DEFAULT_TRANSCRIPT_ID
+} from '@/chat_utils/const/openai';
+import { saveConversation } from '@/chat_utils/app/conversation';
 
 
 export const Chat = memo(
@@ -34,20 +38,31 @@ export const Chat = memo(
     const { t } = useTranslation('chat');
     const [currentMessage, setCurrentMessage] = useState();
     const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
-    const [showSettings, setShowSettings] = useState(false);
-    const [showScrollDownButton, setShowScrollDownButton] =
-      useState(false);
+    const [showScrollDownButton, setShowScrollDownButton] = useState(false);
 
     const messagesEndRef = useRef(null);
     const chatContainerRef = useRef(null);
     const textareaRef = useRef(null);
 
-    const scrollToBottom = useCallback(() => {
-      if (autoScrollEnabled) {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-        textareaRef.current?.focus();
-      }
-    }, [autoScrollEnabled]);
+
+    const [userInfo, setuserInfo] = useState({clientId:DEFAULT_CLIENT_ID, transcriptId: DEFAULT_TRANSCRIPT_ID})
+    const [userInfoSubmitted, setuserInfoSubmitted] = useState(false)
+
+   const handleUserInfoSubmit = (e) => {
+
+    e.preventDefault()
+    if(!userInfo.clientId){
+      userInfo.clientId = DEFAULT_CLIENT_ID
+    }
+    if(!userInfo.transcriptId){
+      userInfo.transcriptId = DEFAULT_TRANSCRIPT_ID
+
+    }
+    conversation.clientId = userInfo.clientId
+    conversation.transcriptId = userInfo.transcriptId
+    setuserInfoSubmitted(!userInfoSubmitted);
+    saveConversation(conversation);
+   }
 
     const handleScroll = () => {
       if (chatContainerRef.current) {
@@ -70,16 +85,6 @@ export const Chat = memo(
         top: chatContainerRef.current.scrollHeight,
         behavior: 'smooth',
       });
-    };
-
-    const handleSettings = () => {
-      setShowSettings(!showSettings);
-    };
-
-    const onClearAll = () => {
-      if (confirm(t('Are you sure you want to clear all messages?'))) {
-        onUpdateConversation(conversation, { key: 'messages', value: [] });
-      }
     };
 
     const scrollDown = () => {
@@ -120,10 +125,13 @@ export const Chat = memo(
       };
     }, [messagesEndRef]);
 
+    useEffect(()=>{
+      console.log(userInfoSubmitted)
+    },[userInfoSubmitted])
+
     return (
       <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#343541]">
         {
-        
         (
           <>
             <div
@@ -131,37 +139,77 @@ export const Chat = memo(
               ref={chatContainerRef}
               onScroll={handleScroll}
             >
-              {conversation.messages.length === 0 ? (
+              {conversation.messages.length === 0 && !conversation.clientId ? (
                 <>
                   <div className="mx-auto flex w-[350px] flex-col space-y-10 pt-12 sm:w-[600px]">
                     <div className="text-center text-3xl font-semibold text-gray-800 dark:text-gray-100">
-                      {models.length === 0 ? (
-                        <div>
-                          <Spinner size="16px" className="mx-auto" />
-                        </div>
-                      ) : (
-                        'Start New Zoom Transcript Conversation'
+                      {(
+              <form onSubmit={handleUserInfoSubmit} class="w-full max-w-2xl border border-gray-500 p-3 rounded-md justify-center">
+                <div class="flex flex-wrap mx-3 mb-6">
+                  <div class="w-full  px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-white-700 text-sm mb-3 mt-1" for="grid-clientId">
+                      Transcript ID
+                    </label>
+                    <input 
+                          value={userInfo.transcriptId}
+                          class="block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-[1.2rem] font-normal mb-5" 
+                          id="grid-transcriptId" 
+                          type="text" 
+                          placeholder="1T1g8KNFkxzxhDgsxUjlYl2ow2YQoUc82"
+                          onChange={
+                            (e) => {
+                              setuserInfo({clientId:userInfo.clientId, transcriptId: e.target.value})
+                            }
+                          }
+                          /> 
+                  </div>
+                  <div class="w-full px-3">
+                    <label class="block uppercase tracking-wide text-white-700 text-sm  mb-2" for="grid-transcriptId">
+                      Client ID
+                    </label>
+                    <input 
+                      value={userInfo.clientId}
+                      class=" block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-[1.2rem] font-normal" 
+                      id="grid-last-name" 
+                      type="text" 
+                      placeholder="12345" 
+                      onChange={(e)=>{
+                        setuserInfo({clientId: e.target.value,transcriptId:userInfo.transcriptId})
+                      }}
+                      />
+                  </div>
+
+                  <div class="w-full px-3">
+
+                    <button 
+                    type="submit"
+                    class="mt-7 shadow bg-indigo-500 hover:bg-indigo-600 focus:shadow-outline focus:outline-none text-white py-2 px-8 rounded text-lg" 
+                    >
+                      Submit
+                    </button>
+                  </div>
+
+                  <div class="w-full  px-3">
+                  <div class="md:w-1/3"></div>
+                  <div class="md:w-2/3">
+                  
+                  </div>
+                </div>
+
+                  
+                </div>
+                
+                </form>
                       )}
                     </div>
 
                   </div>
                 </>
               ) : (
+
+                conversation.messages.length === 0 ? <div className="flex justify-center  border-b-neutral-300  py-2 mt-7 text-xl ">I am ready to asnwer your questions 😀 </div> :
                 <>
                   <div className="flex justify-center  border-b-neutral-300  py-2 ">
-                    {/* {t('Model')}: {conversation.model.name}
-                    <button
-                      className="ml-2 cursor-pointer hover:opacity-50"
-                      onClick={handleSettings}
-                    >
-                      <IconSettings size={18} />
-                    </button>
-                    <button
-                      className="ml-2 cursor-pointer hover:opacity-50"
-                      onClick={onClearAll}
-                    >
-                      <IconClearAll size={18} />
-                    </button> */}
                   </div>
                   {conversation.messages.map((message, index) => (
                     <ChatMessage
@@ -189,18 +237,22 @@ export const Chat = memo(
               conversationIsEmpty={conversation.messages.length === 0}
               model={conversation.model}
               prompts={prompts}
+
               onSend={(message, plugin) => {
                 setCurrentMessage(message);
                 onSend(message, 0, plugin);
               }}
+
               onRegenerate={() => {
                 if (currentMessage) {
                   onSend(currentMessage, 2, null);
                 }
               }}
+
             />
           </>
         )}
+        
         {showScrollDownButton && (
           <div className="absolute bottom-0 right-0 mb-4 mr-4 pb-20">
             <button
