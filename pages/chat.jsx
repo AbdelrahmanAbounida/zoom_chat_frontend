@@ -41,7 +41,7 @@ const Home= ({
 
   // STATES ----------------------------------------------
 
-  const [apiKey, setApiKey] = useState('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');
+  const [apiKey, setApiKey] = useState(localStorage.getItem('OPENAI_API_KEY')?localStorage.getItem('OPENAI_API_KEY'): process.env.OPENAI_API_KEY);
   const [pluginKeys, setPluginKeys] = useState([]);
   const [loading, setLoading] = useState(false);
   const [lightMode, setLightMode] = useState('dark');

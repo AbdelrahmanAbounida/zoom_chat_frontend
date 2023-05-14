@@ -16,6 +16,17 @@ import {
       this.code = code;
     }
   }
+
+// return last 3 messages
+  const getChatHistory = (messages) => {
+    if (messages.length > 3) {
+      return messages.slice(-3);
+    } else {
+      return messages;
+    }
+  };
+
+
   export const ZoomOpenAIStream = async (
     model,
     systemPrompt,
@@ -32,11 +43,13 @@ import {
     let source_time;
 
     const question = messages[messages.length-1];
+    const chatHistory = getChatHistory(messages);
 
     const payload =  {
       "question": question['content'],
       "clientId": clientId,
-      "transcript_ids":transcriptId
+      "transcript_ids":transcriptId,
+      "openai_key": key ? key : process.env.OPENAI_API_KEY
       }
 
     await fetch(`https://zoom-pinecone-backend.onrender.com/qa`, {
@@ -50,24 +63,31 @@ import {
                           .then(data => {
                             const speaker = data["result"]["speaker"]
                             const context = data["result"]["context"]
+                            
                             source_time = data["result"]["source_time"]
 
-                            QA_PROMPT = `You are a Q&A AI assistant. Use the following pieces of context got from zoom meeting transcript
-                                          and reply to the following  question according to the given context
-                                      
+                            
+
+                            QA_PROMPT = `You are a Q&A AI assistant. Use the following pieces of context got from zoom meeting transcript and reply to the following  question according to the given context and chat history
+                                         and if the context information is not enough to answer the question, politely say I don't know.
+
                                           question:
                                           ${question['content']}
 
                                           context:
                                           ${speaker} says:
-                                      ${context}
-                                      
-                                      and if the context information is not enough to answer the question, politely say I don't know`
+                                          ${context}
 
+                                          chat history:
+                                          ${chatHistory}
+                                      
+                                      `
                           })
 
-    console.log("*********************************")                      
+                          console.log(QA_PROMPT)
 
+
+    console.log("*********************************")                      
     const res = await fetch(`${OPENAI_API_HOST}/v1/completions`, {
       headers: {
         'Content-Type': 'application/json',

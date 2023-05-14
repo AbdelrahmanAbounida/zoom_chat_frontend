@@ -164,7 +164,6 @@ export const Chatbar = ({
         )}
       </div>
 
-      {/* <FileUploadArea /> */}
 
       <ChatbarSettings
         lightMode={lightMode}
